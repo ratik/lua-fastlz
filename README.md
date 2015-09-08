@@ -18,13 +18,13 @@ $sudo make install clean
 Using lua-fastlz
 --------
 
-	require('fastlz')
+	flz = require('fastlz')
 
 	local datas = 'abcdef0123456789abcdef0123456789abcdef0123456789'
-	local compressed = fastlz_compress(datas)
+	local compressed = flz.compress(datas)
 
 	if compressed then
-		local decompress = fastlz_decompress(compressed)
+		local decompress = flz.decompress(compressed)
 		if not decompress then
 			print('Error!')
 		else if decompress == datas then
@@ -32,10 +32,10 @@ Using lua-fastlz
 		end
 	end
 	
-###fastlz_compress
+###compress
 
-**syntax:** str = fastlz_compress(string)
+**syntax:** str = flz.compress(string)
 
-###fastlz_decompress
+###decompress
 
-**syntax:** str = fastlz_decompress(string)
+**syntax:** str = flz.decompress(string)
